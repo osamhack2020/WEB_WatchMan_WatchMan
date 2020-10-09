@@ -38,4 +38,4 @@
 - 이상윤 (kara090813@gmail.com), Github Id: kara090813
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
- * [MIT](https://github.com/won-joon/WEB-WatchMan-WatchMan/blob/master/license.md)
+ * [MIT](https://github.com/osamhack2020/WEB_WatchMan_WatchMan/blob/master/license.md)
