@@ -34,8 +34,8 @@
 
  
 ## 팀 정보 (Team Information)
-- 서원준 (wes819@naver.com), Github Id: 
-- 이상윤 (kara090813gmail.com), Github Id: 
+- 서원준 (wes819@naver.com), Github Id: won-joon
+- 이상윤 (kara090813@gmail.com), Github Id: kara090813
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 
