@@ -13,6 +13,18 @@ module.exports = ((sequelize, DataTypes) => (
             type: DataTypes.STRING(80),
             allowNull: false,
         },
+        gender: {
+            type: DataTypes.STRING(20),
+            allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING(40),
+            allowNull: true,
+        },
+        phonenumber: {
+            type: DataTypes.STRING(40),
+            allowNull: true,
+        },
     }, {
         timestamps: true,
         paranoid: true,

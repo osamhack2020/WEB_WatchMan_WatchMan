@@ -1,19 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>회원가입 페이지</title>
+	<title>Watch Man</title>
+	<link rel="stylesheet" type="text/css" href="css/wtm.css">
 </head>
 <body>
-    <div class="loginForm">
-        <form action='/auth/join' method='post'>
-            아이디<input type="text" name="userid">
-            이름<input type="text" name="username">
-            비밀번호<input type="password" name="password">
-            <button type="submit">회원가입</button>
-            <% if(joinError) { %>
-                <p><%=joinError %></p>
-            <% } %>
-        </form>
-    </div>
+	<aside>
+		<div id="logo"><img alt="logo" src="img/logo.png"></div>
+		<nav id="aside_menu">
+			<ul class="menu_form">
+				<span class="title_li">그룹관리 체계</span>
+				<li><img alt="아이콘" class="menu_icon" src="img/icon/g1.png">그룹 생성/참여</li>
+				<li><img alt="아이콘" class="menu_icon" src="img/icon/g2.png">내 그룹 관리</li>
+				<li><img alt="아이콘" class="menu_icon" src="img/icon/g3.png">일일 자가진단</li>
+			</ul>
+			<ul class="menu_form">
+				<span class="title_li">실시간 대응체계</span>
+				<li><img alt="아이콘" class="menu_icon" src="img/icon/s1.png">실시간 상황판</li>
+				<li><img alt="아이콘" class="menu_icon" src="img/icon/s2.png">전염병 자가진단</li>
+			</ul>
+			<ul class="menu_form">
+				<span class="title_li">감염병 세계현황</span>
+				<li><img alt="아이콘" class="menu_icon" src="img/icon/i1.png">감염병 세계현황</li>
+			</ul>
+		</nav>
+	</aside>
+	<section id="right">
+		<header>
+			<div class="something"></div>
+			<div class="alarm"> </div>
+			<div class="profile">
+				<div class="profile_img">
+					<div><img src="img/profile.jpg" alt="프로필사진"></div>
+				</div>
+				<div class="profile_content">
+					<p class="profile_name"><b>이상윤</b><span>님</span></p>
+					<div class="btn logout_btn">로그아웃</div>
+				</div>
+			</div>
+		</header>
+		<div id="header_space_cover"></div>
+		<article id="dashboard" class="contents">
+			<section id="router">회원가입</section>
+			<section id="register">
+				<div id="register_frame">
+					<div class="register_header">Register<span>&nbsp;&nbsp;회원가입</span></div>
+					<form method="post" action="">
+					<div class="register_content">
+							<div class="reg_ele_block">
+								<div class="reg_input_element">
+									<label for="userid">아이디<span>(id) *</span></label>
+									<input type="text" name="userid" placeholder="Id">
+								</div>
+								<div class="reg_input_element">
+									<label for="pw">비밀번호<span>(password) *</span></label>
+									<input type="password" name="pw" placeholder="Password">
+								</div>
+							</div>
+							<div class="reg_ele_block">
+								<div class="reg_input_element">
+									<label for="name">이름<span>(name) *</span></label>
+									<input type="text" name="name" placeholder="Name">
+								</div>
+								<div class="reg_input_element">
+									<label for="gender">성별<span>(gender) *</span></label>
+									<select name="gender">
+										<option>남성 (male)</option>
+										<option>여성 (female)</option>
+									</select>
+								</div>
+							</div>
+							<div class="reg_ele_block">
+								<div class="reg_input_element">
+									<label for="email">이메일<span>(email)</span></label>
+									<input type="text" name="email" placeholder="E-mail">
+								</div>
+								<div class="reg_input_element">
+									<label for="phone">전화번호<span>(phone)</span></label>
+									<input type="text" name="phone" placeholder="Phone">
+								</div>
+							</div>
+							<div class="reg_ele_block">
+								<div class="reg_chk">
+									<input type="checkbox" name="c1">
+									<label>개인정보 조항 어쩌구 저쩌구를 뭐 제공한다 와치맨사이트 디비에 어쩌구 비밀번호는 암호화 저장이 됨 (필수) </label>
+								</div>
+								<div class="reg_chk">
+									<input type="checkbox" name="c2">
+									<label>휴대전화, 이메일 등 그룹 대표에게 전달 어쩌구를 동의한다 (선택) </label>
+								</div>
+							</div>
+							<div class="reg_ele_block register_submit">
+								<button type="submit">회원가입</button>
+							</div>
+					</div>
+					</form>
+				</div>
+			</section>
+		</article>
+	</section>
 </body>
 </html>
