@@ -22,14 +22,13 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
             name: username,
             password: hash,
         });
-        console.log('회원가입 성공');
         return res.redirect('/');
     }catch(error){
         console.error(error);
         next(error);
     }
 });
-/*
+
 //로그인 처리
 router.post('/login', isNotLoggedIn, (req, res, next) => {
     passport.authenticate('local', (authError, user, info) => {
@@ -51,7 +50,7 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
     })(req, res, next);
 });
 
-
+/*
 router.get('/logout', isLoggedIn, (req, res, next) => {
     req.logout();
     req.session.destroy();
