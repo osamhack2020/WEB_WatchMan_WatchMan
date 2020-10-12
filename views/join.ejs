@@ -2,33 +2,14 @@
 <html>
 <head>
 	<title>Watch Man</title>
-	<link rel="stylesheet" type="text/css" href="css/wtm.css">
+	<link rel="stylesheet" href="/css/wtm.css">
 </head>
 <body>
 	<aside>
-		<div id="logo"><img alt="logo" src="img/logo.png"></div>
-		<nav id="aside_menu">
-			<ul class="menu_form">
-				<span class="title_li">그룹관리 체계</span>
-				<li><img alt="아이콘" class="menu_icon" src="img/icon/g1.png">그룹 생성/참여</li>
-				<li><img alt="아이콘" class="menu_icon" src="img/icon/g2.png">내 그룹 관리</li>
-				<li><img alt="아이콘" class="menu_icon" src="img/icon/g3.png">일일 자가진단</li>
-			</ul>
-			<ul class="menu_form">
-				<span class="title_li">실시간 대응체계</span>
-				<li><img alt="아이콘" class="menu_icon" src="img/icon/s1.png">실시간 상황판</li>
-				<li><img alt="아이콘" class="menu_icon" src="img/icon/s2.png">전염병 자가진단</li>
-			</ul>
-			<ul class="menu_form">
-				<span class="title_li">감염병 세계현황</span>
-				<li><img alt="아이콘" class="menu_icon" src="img/icon/i1.png">감염병 세계현황</li>
-			</ul>
-		</nav>
+		<%- include('sidebar') %>
 	</aside>
 	<section id="right">
 		<header>
-			<div class="something"></div>
-			<div class="alarm"> </div>
 		</header>
 		<div id="header_space_cover"></div>
 		<article id="dashboard" class="contents">

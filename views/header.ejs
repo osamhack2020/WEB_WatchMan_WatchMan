@@ -1,0 +1,31 @@
+<div class="something"></div>
+<div class="alarm"><img alt="알람" src=""></div>
+<% if(user) { %>
+    <div class="profile">
+        <div class="profile_img">
+            <div><img src="/img/profile.jpg" alt="프로필사진"></div>
+        </div>
+        <div class="profile_content">
+            <p class="profile_name"><b><%= user.name %></b><span>님</span></p>
+            <div class="btn logout_btn" onclick="location.href='/auth/logout'">로그아웃</div>
+        </div>
+    </div>
+<% } else { %>
+    <div class="login">
+        <form action='/auth/login' method='post'>
+            <span>
+                <label> 아이디 </label>
+                <input type="text" name="userid" required/>
+            </span>
+            <span>
+                <label> 비밀번호 </label>
+                <input type="password" name="password" required />
+            </span>
+            <button type="submit"> 로그인 </button>
+            <% if(loginError) { %>
+                <p><%= loginError %></p>
+            <% } %>
+        </form>
+        <button onclick="location.href='/join'">회원가입</button>
+    </div>
+<% } %>
