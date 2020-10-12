@@ -36,7 +36,7 @@
 					</div>
 					<div class="profile_content">
 						<p class="profile_name"><b><%= user.name %></b><span>님</span></p>
-						<div class="btn logout_btn">로그아웃</div>
+						<div class="btn logout_btn" onclick="location.href='/auth/logout'">로그아웃</div>
 					</div>
 				</div>
 			<% } else { %>
@@ -55,7 +55,7 @@
 							<p><%= loginError %></p>
 						<% } %>
 					</form>
-					<button onclick="location.href='/join';">회원가입</button>
+					<button onclick="location.href='/join'">회원가입</button>
 				</div>
 			<% } %>
 		</header>

@@ -9,7 +9,7 @@ const router = express.Router();
 
 //회원 가입 처리
 router.post('/join', isNotLoggedIn, async (req, res, next) => {
-    const { userid, username, password } = req.body;
+    const { userid, password, name, gender, email, phone } = req.body;
     try{
         const exUser = await User.findOne({ where: { userid }});
         if(exUser){
@@ -19,8 +19,11 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
         const hash = await bcrypt.hash(password, 12);
         await User.create({
             userid,
-            name: username,
             password: hash,
+            name,
+            gender,
+            email,
+            phonenumber: phone,
         });
         return res.redirect('/');
     }catch(error){
@@ -50,11 +53,11 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
     })(req, res, next);
 });
 
-/*
-router.get('/logout', isLoggedIn, (req, res, next) => {
+//로그아웃 처리
+router.get('/logout', isLoggedIn, (req, res) => {
     req.logout();
     req.session.destroy();
     res.redirect('/');
 });
-*/
+
 module.exports = router;

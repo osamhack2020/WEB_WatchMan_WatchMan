@@ -29,15 +29,6 @@
 		<header>
 			<div class="something"></div>
 			<div class="alarm"> </div>
-			<div class="profile">
-				<div class="profile_img">
-					<div><img src="img/profile.jpg" alt="프로필사진"></div>
-				</div>
-				<div class="profile_content">
-					<p class="profile_name"><b>이상윤</b><span>님</span></p>
-					<div class="btn logout_btn">로그아웃</div>
-				</div>
-			</div>
 		</header>
 		<div id="header_space_cover"></div>
 		<article id="dashboard" class="contents">
@@ -45,7 +36,7 @@
 			<section id="register">
 				<div id="register_frame">
 					<div class="register_header">Register<span>&nbsp;&nbsp;회원가입</span></div>
-					<form method="post" action="">
+					<form method="post" action="/auth/join">
 					<div class="register_content">
 							<div class="reg_ele_block">
 								<div class="reg_input_element">
@@ -53,8 +44,8 @@
 									<input type="text" name="userid" placeholder="Id">
 								</div>
 								<div class="reg_input_element">
-									<label for="pw">비밀번호<span>(password) *</span></label>
-									<input type="password" name="pw" placeholder="Password">
+									<label for="password">비밀번호<span>(password) *</span></label>
+									<input type="password" name="password" placeholder="Password">
 								</div>
 							</div>
 							<div class="reg_ele_block">
