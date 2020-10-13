@@ -1,7 +1,6 @@
 
 *{
 	font-family: 'Malgun Gothic';
-	font-weight: normal;
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
@@ -178,7 +177,8 @@ header .profile > div:last-child{
 	.reg_input_element input[type=text]
 	,.reg_input_element input[type=password]
 	, .reg_input_element select{
-		width:360px;
+		max-width:360px;
+		width:100%;
 		height:37px;
 		padding:3px 10px;
 		border:2px solid #777777;
@@ -210,6 +210,132 @@ header .profile > div:last-child{
 		font-size: 0.9em;
 		cursor: pointer;
 	}
-	.login form{
+
+
+
+
+/*그룹생성*/
+#create_group{
+	width:100%;
+	position: relative;
+}
+#create_frame{
+	position: relative;
+	max-width:835px;
+	width:100%;
+	height:730px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+	box-shadow: 2px 5px 10px 8px rgba(0,0,0,.2);
+	border-radius: 10px;
+}
+#create_header{
+	width:100%;
+	height:85px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background: #313a46;
+	padding:15px 35px;
+	color: white;
+	font-size: 2.3em;
+}
+#create_header span{
+	font-size: 0.6em;
+	font-weight: bold;
+}
+#create_content{
+	padding:50px 40px;
+	color:#313131;
+}
+	.create_ele_block{
+		font-size: 17px;
+		font-weight: bold;
+		margin-bottom:50px;
+	}
+	.create_ele_block:nth-child(2){
+		margin-bottom:30px;
+	}
+	.create_ele_block:nth-child(3){
+		margin-bottom:35px;
+	}
+	.create_ele_block label{
 		display: inline-block;
+		max-width:120px;
+		width:100%;
+	}
+	.create_ele_block input{
+		font-size: 0.9em;
+		font-weight: bold;
+	}
+	.create_ele_block input[type=text]{
+		max-width:360px;
+		width:100%;
+		height:37px;
+		padding:3px 10px;
+		border:2px solid #777777;
+		border-radius: 8px;
+		box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
+		margin-left: 5px;
+	}
+	.create_ele_block input[type=number]{
+		max-width:220px;
+		width:100%;
+		height:37px;
+		padding:3px 10px;
+		border:2px solid #777777;
+		border-radius: 8px;
+		box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
+		margin-left: 5px;
+		text-align: center;
+	}
+	.invite_max_box{
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	.invite_max_box > div{
+		display: inline-block;
+		float: left;
+		width:37px;
+		height:37px;
+		padding:3px 10px;
+		border:2px solid #777777;
+		border-radius: 8px;
+		box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
+		text-align: center;
+		cursor: pointer;
+		margin-left:3px;
+	}
+	.invite_code_btn{
+		display: inline-block;
+		padding: 5px 10px;
+		border:2px solid #777;
+		box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
+		border-radius: 8px;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	.create_text{
+		font-size: 10pt;
+		margin-left:135px;
+		margin-top: 10px;
+		color:#888;
+	}
+	.create_ele_block label[for=permit]{
+		max-width: 340px;
+	}
+	.create_submit{
+		text-align: right;
+		margin-top:200px;
+	}
+	.create_submit button{
+		border:none;
+		background: #939393;
+		color:white;
+		font-size: 12pt;
+		font-weight: bold;
+		padding:8px 26px;
+		border-radius: 8px;
+		box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
+		cursor: pointer;
 	}

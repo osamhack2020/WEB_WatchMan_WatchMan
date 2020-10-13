@@ -11,5 +11,9 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize, Sequelize);
+db.Group = require('./group')(sequelize, Sequelize);
+
+db.User.belongsToMany(db.Group, { through: 'temp' });
+db.Group.belongsToMany(db.User, { through: 'temp' });
 
 module.exports = db;
