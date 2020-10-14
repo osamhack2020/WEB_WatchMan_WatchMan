@@ -22,10 +22,10 @@
                 <input type="password" name="password" required />
             </span>
             <button type="submit"> 로그인 </button>
-            <% if(loginError) { %>
-                <p><%= loginError %></p>
-            <% } %>
         </form>
         <button onclick="location.href='/join'">회원가입</button>
+        <% if(loginError) { %>
+            <p><%= loginError %></p>
+        <% } %>
     </div>
 <% } %>

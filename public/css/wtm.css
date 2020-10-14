@@ -6,9 +6,18 @@
 	box-sizing: border-box;
 	list-style: none;
 }
+
+/*수정한 부분*/
 a:link { color: #7e8b9c; text-decoration: none;}
 a:visited { color: #7e8b9c; text-decoration: none;}
 a:hover { color: white; text-decoration: none;}
+
+.login form{
+	display: inline-block;
+}
+/* ---------------*/
+
+
 html{background:#f3f3f3;}
 aside{
 	max-width:230px;
