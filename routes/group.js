@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const { User, Group } = require('../models');
 
+router.get('/', (req, res) => {
+    res.render('group', {
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
+})
 
 router.get('/code', (req, res) => {
     Group.count()
@@ -11,10 +17,14 @@ router.get('/code', (req, res) => {
 });
 
 router.get('/create', (req, res) => {
-    res.render('group', {
-        user: req.user,
-        loginError: req.flash('loginError'),
-    });
+    if(req.user){
+        res.render('group_create', {
+            user: req.user,
+            loginError: req.flash('loginError'),
+        });
+    }else{
+        res.redirect('/');
+    }
 });
 
 router.post('/create', async (req, res, next) => {

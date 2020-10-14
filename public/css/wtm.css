@@ -6,6 +6,9 @@
 	box-sizing: border-box;
 	list-style: none;
 }
+a:link { color: #7e8b9c; text-decoration: none;}
+a:visited { color: #7e8b9c; text-decoration: none;}
+a:hover { color: white; text-decoration: none;}
 html{background:#f3f3f3;}
 aside{
 	max-width:230px;
@@ -339,3 +342,77 @@ header .profile > div:last-child{
 		box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
 		cursor: pointer;
 	}
+
+
+/*cj select*/
+#cj_select{
+	width:100%;
+	position: relative;
+}
+#cj_frame{
+	position: relative;
+	max-width:1200px;
+	width:100%;
+	height: 390px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+	box-shadow: 2px 5px 10px 8px rgba(0,0,0,.2);
+	border-radius: 10px;
+	margin-top:90px;
+}
+#cj_frame_header{
+	width:100%;
+	height:15%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background: #313a46;
+}
+#cf_content{
+	display: block;
+	width:100%;
+	height:85%;
+	position: relative;
+}
+#cf_content .cf_inner{
+	display: inline-block;
+	width:50%;
+	height: 100%;
+	float:left;
+	text-align: center;
+}
+#cf_content .cf_left{
+	border-right:2px dashed rgba(49,58,70,.8);
+}
+#cf_content .cf_right{
+	border-left:2px dashed rgba(49,58,70,.8);	
+}
+#cf_content .cf_inner .cf_inner_title{
+	font-size:30pt;
+	font-weight: bold;
+	margin-top:60px;
+}
+#cf_content .cf_inner .cf_inner_title span{
+	font-size:0.65em;
+}
+#cf_content .cf_inner p{
+	color:#4d4d4d;
+	font-weight: bold;
+	margin-top:25px;
+	margin-bottom: 35px;
+}
+#cf_content .cf_inner button{
+	border:none;
+	background: #939393;
+	color:white;
+	font-size: 12pt;
+	font-weight: bold;
+	padding:8px 26px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 3px 1px rgba(0,0,0,.15);
+	cursor: pointer;
+}
+
+
+
+
