@@ -21,7 +21,7 @@
 						<div class="cf_left cf_inner">
 							<div class="cf_inner_title">Create <span>그룹생성</span></div>
 							<p>새로운 그룹 이름과 옵션을 설정하고 생성합니다</p>
-							<button onclick="location.href = '/group/create'">그룹생성</button>
+							<button onclick="cl();">그룹생성</button>
 						</div>
 						<div class="cf_right cf_inner">
 							<div class="cf_inner_title">JOIN <span>그룹참가</span></div>
@@ -33,5 +33,15 @@
 			</section>
 		</article>
 	</section>
+	<script>
+		function cl(){
+			var user = '<%= user  %>';
+			if(!user){
+				alert('로그인이 필요합니다');
+			}else{
+				location.href = '/group/create';
+			}
+		}
+	</script>
 </body>
 </html>

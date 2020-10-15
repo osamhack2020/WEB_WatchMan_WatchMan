@@ -15,6 +15,32 @@ a:hover { color: white; text-decoration: none;}
 .login form{
 	display: inline-block;
 }
+.login label{
+	font-weight: bold;
+}
+.login input[type=text]
+,.login input[type=password]{
+	width:115px;
+	height:25px;
+	padding:3px 10px;
+	border:2px solid #777777;
+	border-radius: 8px;
+	box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
+	margin-top:10px;
+	margin-left: 5px
+}
+
+.login button{
+	margin-left: 5px;
+	padding:8px 15px;
+	border:none;
+	border-radius:10px;
+	background: #939393;
+	color:#fff;
+	font-weight: bold;
+	font-size: 0.8em;
+	cursor: pointer;
+}
 /* ---------------*/
 
 

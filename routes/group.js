@@ -17,14 +17,10 @@ router.get('/code', (req, res) => {
 });
 
 router.get('/create', (req, res) => {
-    if(req.user){
-        res.render('group_create', {
-            user: req.user,
-            loginError: req.flash('loginError'),
-        });
-    }else{
-        res.redirect('/');
-    }
+    res.render('group_create', {
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
 });
 
 router.post('/create', async (req, res, next) => {
