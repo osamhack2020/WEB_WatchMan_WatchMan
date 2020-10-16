@@ -13,51 +13,111 @@
 			<%- include('header') %>
 		</header>
 		<div id="header_space_cover"></div>
-		<article id="dashboard" class="contents">
-            <section id="create_group">
+		<article class="contents">
+			<section id="create_group">
 				<div id="create_frame">
 					<div id="create_header">Create<span>&nbsp;&nbsp;그룹생성</span></div>
 					<form method="post" action="/group/create">
-                        <div id="create_content">
-                            <div class="create_ele_block">
-                                <label for="name">그룹 이름</label>
-                                <input type="text" name="name">
-                            </div>
-                            <div class="create_ele_block">
-                                <label for="code">참여 코드</label>
-                                <input readonly class="invite_code" type="text" name="code">
-                                <div class="invite_code_btn">초대코드 생성</div>
-                                <p class="create_text">
-                                    * 참여코드를 검색해 그룹에 참가할 수 있으며 참여코드는 그룹이름에 맞춰 자동생성 됩니다
-                                </p>
-                            </div>
-                            <div class="create_ele_block">
-                                <label for="permit">그룹 참여 시 그룹장의 허가를 필요로 설정</label>
-                                <input type="checkbox" name="permit">
-                            </div>
-                            <div class="create_ele_block create_submit">
-                                <button class="create_submit_btn">그룹생성</button>
-                            </div>
-                        </div>
+					<div id="create_content">
+						<div class="create_ele_block">
+							<span class="label_txt">그룹 이름</span>
+							<input type="text" name="name">
+						</div>
+						<div class="create_ele_block">
+							<span class="label_txt">참여 코드</span>
+							<input readonly="true" class="invite_code" type="text" name="code">
+							<div class="invite_code_btn">초대코드 생성</div>
+							<p class="create_text">
+								* 참여코드를 검색해 그룹에 참가할 수 있으며 참여코드는 그룹이름에 맞춰 자동생성 됩니다
+							</p>
+						</div>
+						<div class="create_ele_block">
+							<span class="label_txt label_permit">그룹 참여 시 그룹장의 허가를 필요로 설정</span>
+							<input type="checkbox" name="permit">
+						</div>
+						<div class="create_deep_set">
+							<div class="create_deep_title">그룹 상세 설정</div>
+							<div class="create_deep_block">
+								<div class="before_hidden_deep">
+									<span>그룹원 자가진단 보고 기능 활성화</span>
+									<input type="checkbox" name="set1" onClick="chk('set1',this)">
+								</div>
+								<div class="hidden_setting hidden_setting_set1">
+									<input type="number" name="set1_day" min="1" value="1" onchange="timeset(this)">
+									일 
+									<input type="number" name="set1_time" min="1" value="1">
+									회 자가진단 보고
+								</div>
+							</div>
+							<div class="create_deep_block">
+								<div class="before_hidden_deep">
+									<span>그룹원 이상유무 보고 기능 활성화</span>
+									<input type="checkbox" name="set2" onClick="chk('set2',this)">
+								</div>
+								<div class="hidden_setting hidden_setting_set2">
+									<input type="number" name="set2_day" min="1" value="1" onchange="timeset(this)">
+									일 
+									<input type="number" name="set2_time" min="1" value="1">
+									회 이상유무 보고
+								</div>
+							</div>
+							<div class="create_deep_block">
+								<div class="before_hidden_deep">
+									<span>그룹원 체온 보고 기능 활성화</span>
+									<input type="checkbox" name="set3" onClick="chk('set3',this)">
+								</div>
+								<div class="hidden_setting hidden_setting_set3">
+									<input type="number" name="set3_day" min="1" value="1" onchange="timeset(this)">
+									일 
+									<input type="number" name="set3_time" min="1" value="1">
+									회 체온 보고
+								</div>
+							</div>
+						</div>
+						<div class="create_ele_block create_submit">
+							<button class="create_submit_btn">그룹생성</button>
+						</div>
+					</div>
 					</form>
 				</div>
 			</section>
 		</article>
-    </section>
-    <script>
-        const tag = document.querySelector(".invite_code_btn");
-        tag.addEventListener("click", function(){
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    document.querySelector(".invite_code").value = xhr.responseText;
-                } else {
-                    console.error(xhr.responseText);
-                }
-            };
-            xhr.open('GET','/group/code');
-            xhr.send();
-        });
-    </script>
+	</section>
 </body>
 </html>
+<script>
+	const tag = document.querySelector(".invite_code_btn");
+	tag.addEventListener("click", function(){
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+				document.querySelector(".invite_code").value = xhr.responseText;
+			} else {
+				console.error(xhr.responseText);
+			}
+		};
+		xhr.open('GET','/group/code');
+		xhr.send();
+	});
+	
+	function chk(num,ele){
+		let target = document.querySelector(".hidden_setting_"+num);
+		if(ele.checked == true){
+			target.style.opacity=1;
+		}
+		else{
+			target.style.opacity=0;
+		}
+	}
+
+	function timeset(ele){
+		let times = ele.nextElementSibling;
+		if(ele.value > 1){
+			times.value = 1;
+			times.readOnly = true;
+		}
+		else if(ele.value ==1){
+			times.readOnly = false;
+		}	
+	}
+</script>
