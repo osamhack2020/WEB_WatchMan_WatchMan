@@ -31,12 +31,13 @@ router.get('/join', (req, res) => {
 });
 
 router.post('/create', async (req, res, next) => {
-    const { name, code, set1, set1_day, set1_time, set2, set2_day, set2_time, set3, set3_day, set3_time } = req.body;
+    const { name, code, permit, set1, set1_day, set1_time, set2, set2_day, set2_time, set3, set3_day, set3_time } = req.body;
     const user = await User.findOne({ where: { id: req.user.id }});
     try{
         await Group.create({
             name,
             leader: req.user.id,
+            permit,
             set1,
             set1_day,
             set1_time,
@@ -55,5 +56,35 @@ router.post('/create', async (req, res, next) => {
     }
 });
 
+router.get('/search/:gn/:gc', async(req, res, next) => {
+    try{
+        if(req.params.gc == 0){
+            const groups = await Group.findAll({ 
+                where: { name: req.params.gn },
+                attributes: ['id', 'name', 'permit'],
+                include: [{
+                    model: User,
+                    where: { id: req.user.id },
+                    attributes: ['name'],
+                }],
+            });
+            res.json(groups);
+        }else{
+            const groups = await Group.findOne({ 
+                where: { name: req.params.gn, id: req.params.gc},
+                attributes: ['id', 'name', 'permit'],
+                include: [{
+                    model: User,
+                    where: { id: req.user.id },
+                    attributes: ['name'],
+                }],
+            });
+            res.json(groups);
+        }
+    }catch(error){
+        console.error(error);
+        next(error);
+    }
+});
 
 module.exports = router;

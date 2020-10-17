@@ -3,15 +3,16 @@ module.exports = ((sequelize, DataTypes) => (
         name: {
             type: DataTypes.STRING(40),
             allowNull: false,
-            unique: true,
         },
         leader: {
             type: DataTypes.STRING(40),
             allowNull: false,
         },
         member: {
+            type: DataTypes.STRING,
+        },
+        permit: {
             type: DataTypes.STRING(40),
-            allowNull: true,
         },
         set1: {
             type: DataTypes.STRING(40),

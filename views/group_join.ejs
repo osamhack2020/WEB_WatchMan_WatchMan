@@ -22,9 +22,9 @@
 					<div id="join_content">
 						<div class="join_title">
 							<label>참여코드</label>
-							<input type="text" name="group_name" placeholder="그룹명">
+							<input type="text" class = "group_name" name="group_name" placeholder="그룹명" required>
 							<span>#</span>
-							<input type="text" name="group_code" placeholder="고유넘버">
+							<input type="text" class = "group_code" name="group_code" placeholder="고유넘버">
 							<div class="group_search_btn">그룹검색</div>
 							<p>* 참여코드는 [그룹명+고유넘버] 이며<br>고유넘버 미입력 시 그룹명이 일치하는 모든 항목이 표시됩니다</p>
 						</div>
@@ -40,6 +40,7 @@
 							</div>
 						</div>
 						<div class="search_info">
+							<%#
 							<div class="search_info_ele">
 								<div class="permit_info_permit_true"></div>
 								<span class="search_info_title">
@@ -100,6 +101,7 @@
 									참가신청
 								</div>
 							</div>
+							%>
 						</div>
 					</div>
 				</div>
@@ -108,3 +110,26 @@
 	</section>
 </body>
 </html>
+<script>
+	var sc = document.querySelector(".group_search_btn");
+	sc.addEventListener("click", function(){
+		var gn = document.querySelector(".group_name");
+		var gc = document.querySelector(".group_code");
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function(){
+			if(xhr.status === 200){
+				var gr = xhr.response;
+				console.log(xhr.response);
+			}else{
+				console.error(xhr.responseText);
+			}
+		}
+		if(gc.value==""){
+			xhr.open('GET', '/group/search/' + gn.value + '/' + '0');
+			xhr.send();
+		}else{
+			xhr.open('GET', '/group/search/' + gn.value + '/' + gc.value);
+			xhr.send();
+		}
+	});
+</script>
