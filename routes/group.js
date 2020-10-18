@@ -59,7 +59,7 @@ router.post('/create', async (req, res, next) => {
 router.get('/search/:gn/:gc', async(req, res, next) => {
     try{
         if(req.params.gc == 0){
-            const groups = await Group.findAll({ 
+            const groups = await Group.findAll({//코드없이 그룹명으로만 찾는 경우
                 where: { name: req.params.gn },
                 attributes: ['id', 'name', 'permit', 'member'],
                 include: [{
@@ -70,7 +70,7 @@ router.get('/search/:gn/:gc', async(req, res, next) => {
             });
             res.json(groups);
         }else{
-            const groups = await Group.findOne({ 
+            const groups = await Group.findOne({ //코드까지 쳐서 검색하는 경우
                 where: { name: req.params.gn, id: req.params.gc},
                 attributes: ['id', 'name', 'permit', 'member'],
                 include: [{

@@ -111,6 +111,16 @@
 </body>
 </html>
 <script>
+	var ft = function(a, b, c, d, e, f){
+		if(f == true){
+			a.innerHTML = "<div class='permit_info_permit_true'></div>";
+		}else{
+			a.innerHTML = "<div class='permit_info_permit_false'></div>";
+		}
+		a.innerHTML += "<span class='search_info_title'>"+b+"#"+c+"</div>";
+		a.innerHTML += "<span class='search_info_others'>[그룹장 : "+d+"] [참가인원 : "+e+"명]</div>";
+		a.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+	}
 	var sc = document.querySelector(".group_search_btn");
 	sc.addEventListener("click", function(){
 		var gn = document.querySelector(".group_name");
@@ -119,40 +129,27 @@
 		xhr.onload = function(){
 			if(xhr.status === 200){
 				var gr = JSON.parse(xhr.response);
-				console.log(gr);
-				if(gr.length == undefined){
+				if(gr.length == undefined){//찾는 그룹이 1개밖에 없을 경우
 					var a = document.querySelector(".search_info");
 					a.innerHTML = '';
 					var div = document.createElement("div");
 					div.className = "search_info_ele";
 					if(gr.permit=="on"){
-						div.innerHTML = "<div class='permit_info_permit_true'></div>";
-						div.innerHTML += "<span class='search_info_title'>"+gr.name+"#"+gr.id+"</div>";
-						div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr.users[0].name+"] [참가인원 : "+gr.member+"명]</div>";
-						div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+						ft(div, gr.name, gr.id, gr.users[0].name, gr.member, true);
 					}else{
-						div.innerHTML = "<div class='permit_info_permit_false'></div>";
-						div.innerHTML += "<span class='search_info_title'>"+gr.name+"#"+gr.id+"</div>";
-						div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr.users[0].name+"] [참가인원 : "+gr.member+"명]</div>";
-						div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+						ft(div, gr.name, gr.id, gr.users[0].name, gr.member, false);
 					}
 					a.append(div);
-				}else{
+				}else{//찾는 그룹이 여러개일 경우
 					var a = document.querySelector(".search_info");
 					a.innerHTML = '';
 					for (var i in gr){
 						var div = document.createElement("div");
 						div.className = "search_info_ele";
 						if(gr[i].permit=="on"){
-							div.innerHTML = "<div class='permit_info_permit_true'></div>";
-							div.innerHTML += "<span class='search_info_title'>"+gr[i].name+"#"+gr[i].id+"</div>";
-							div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr[i].users[0].name+"] [참가인원 : "+gr[i].member+"명]</div>";
-							div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+							ft(div, gr[i].name, gr[i].id, gr[i].users[0].name, gr[i].member, true);
 						}else{
-							div.innerHTML = "<div class='permit_info_permit_false'></div>";
-							div.innerHTML += "<span class='search_info_title'>"+gr[i].name+"#"+gr[i].id+"</div>";
-							div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr[i].users[0].name+"] [참가인원 : "+gr[i].member+"명]</div>";
-							div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+							ft(div, gr[i].name, gr[i].id, gr[i].users[0].name, gr[i].member, false);
 						}
 						a.append(div);
 					}
