@@ -652,3 +652,39 @@ header .profile > div:last-child{
 		.search_info_ele .search_info_others{
 			min-width: 260px;
 		}
+
+/*그룹 관리*/
+#manage_group{
+	width:100%;
+	position: relative;
+}
+#manage_frame_row1{
+	width: 100%;
+	background-color: yellowgreen;
+	height: 200px;
+}
+	#manage_group_member{
+		display: inline-block;
+		background: #fff;
+		width: 25%;
+		height: 160px;
+		margin-right: 2.5%;
+	}
+	#manage_group_status{
+		display: inline-block;
+		background: #fff;
+		width: 40%;
+		height: 160px;
+		margin-right: 2.5%;
+	}
+	#manage_group_diagnose{
+		display: inline-block;
+		background: #fff;
+		width: 30%;
+		height: 160px;
+	}
+#manage_frame_row2{
+	width: 100%;
+	background-color: yellow;
+	height: 530px;
+}

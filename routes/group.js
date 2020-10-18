@@ -30,6 +30,13 @@ router.get('/join', (req, res) => {
     });
 });
 
+router.get('/manage', (req, res) => {
+    res.render('group_manage', {
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
+});
+
 router.post('/create', async (req, res, next) => {
     const { name, code, permit, set1, set1_day, set1_time, set2, set2_day, set2_time, set3, set3_day, set3_time } = req.body;
     const user = await User.findOne({ where: { id: req.user.id }});
