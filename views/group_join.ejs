@@ -118,8 +118,45 @@
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function(){
 			if(xhr.status === 200){
-				var gr = xhr.response;
-				console.log(xhr.response);
+				var gr = JSON.parse(xhr.response);
+				console.log(gr);
+				if(gr.length == undefined){
+					var a = document.querySelector(".search_info");
+					a.innerHTML = '';
+					var div = document.createElement("div");
+					div.className = "search_info_ele";
+					if(gr.permit=="on"){
+						div.innerHTML = "<div class='permit_info_permit_true'></div>";
+						div.innerHTML += "<span class='search_info_title'>"+gr.name+"#"+gr.id+"</div>";
+						div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr.users[0].name+"] [참가인원 : "+gr.member+"명]</div>";
+						div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+					}else{
+						div.innerHTML = "<div class='permit_info_permit_false'></div>";
+						div.innerHTML += "<span class='search_info_title'>"+gr.name+"#"+gr.id+"</div>";
+						div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr.users[0].name+"] [참가인원 : "+gr.member+"명]</div>";
+						div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+					}
+					a.append(div);
+				}else{
+					var a = document.querySelector(".search_info");
+					a.innerHTML = '';
+					for (var i in gr){
+						var div = document.createElement("div");
+						div.className = "search_info_ele";
+						if(gr[i].permit=="on"){
+							div.innerHTML = "<div class='permit_info_permit_true'></div>";
+							div.innerHTML += "<span class='search_info_title'>"+gr[i].name+"#"+gr[i].id+"</div>";
+							div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr[i].users[0].name+"] [참가인원 : "+gr[i].member+"명]</div>";
+							div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+						}else{
+							div.innerHTML = "<div class='permit_info_permit_false'></div>";
+							div.innerHTML += "<span class='search_info_title'>"+gr[i].name+"#"+gr[i].id+"</div>";
+							div.innerHTML += "<span class='search_info_others'>[그룹장 : "+gr[i].users[0].name+"] [참가인원 : "+gr[i].member+"명]</div>";
+							div.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+						}
+						a.append(div);
+					}
+				}
 			}else{
 				console.error(xhr.responseText);
 			}

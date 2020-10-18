@@ -9,7 +9,8 @@ module.exports = ((sequelize, DataTypes) => (
             allowNull: false,
         },
         member: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
+            defaultValue: 1,
         },
         permit: {
             type: DataTypes.STRING(40),

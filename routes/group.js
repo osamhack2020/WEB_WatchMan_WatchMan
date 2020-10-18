@@ -61,7 +61,7 @@ router.get('/search/:gn/:gc', async(req, res, next) => {
         if(req.params.gc == 0){
             const groups = await Group.findAll({ 
                 where: { name: req.params.gn },
-                attributes: ['id', 'name', 'permit'],
+                attributes: ['id', 'name', 'permit', 'member'],
                 include: [{
                     model: User,
                     where: { id: req.user.id },
@@ -72,7 +72,7 @@ router.get('/search/:gn/:gc', async(req, res, next) => {
         }else{
             const groups = await Group.findOne({ 
                 where: { name: req.params.gn, id: req.params.gc},
-                attributes: ['id', 'name', 'permit'],
+                attributes: ['id', 'name', 'permit', 'member'],
                 include: [{
                     model: User,
                     where: { id: req.user.id },
