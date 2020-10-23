@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Watch Man</title>
+	<link rel="stylesheet" href="/css/wtm.css">
+</head>
+<body>
+	<aside>
+		<%- include('sidebar') %>
+	</aside>
+	<section id="right">
+		<header>
+			<%- include('header') %>
+		</header>
+		<div id="header_space_cover"></div>
+		<article class="contents">
+            <section id="news">
+                <div id="news_in">
+                    <div class="news_row">
+                
+                    </div>
+                </div>
+                <div id="news_out">
+                    <% for(var i=0; i<4; i++){ %>
+                        <div class="news_row">
+                            <div class="news_image">
+                                <img src = <%= article[i].urlToImage %>>
+                            </div>
+                            <div class="news_title">
+                                <%= article[i].title %>
+                            </div>
+                            <div class="news_description">
+                                <%= article[i].description %>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </section>
+		</article>
+	</section>
+</body>
+</html>
