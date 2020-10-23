@@ -671,6 +671,8 @@ header .profile > div:last-child{
 			#news_in{
 				height: 350px;
 				border: 2px solid #777;
+				overflow: auto;
+				margin-bottom: 5px;
 			}
 			#news_out{
 				border: 2px solid #777;
@@ -678,7 +680,7 @@ header .profile > div:last-child{
 				overflow: auto;
 			}
 			.news_row{
-				display: inline-block;
+				display: inline-grid;
 				width: 230px;
 			}
 			.news_image img{
