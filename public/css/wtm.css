@@ -664,32 +664,35 @@ header .profile > div:last-child{
 			min-width: 260px;
 		}
 
-		#news{
-			width:100%;
-			position: relative;
+	/*뉴스 관리부분*/
+	#news{
+		width:100%;
+		position: relative;
+	}
+		#news_in{
+			height: 350px;
+			border: 2px solid #777;
+			overflow: auto;
+			margin-bottom: 5px;
+			padding-left: 12px;
 		}
-			#news_in{
-				height: 350px;
-				border: 2px solid #777;
-				overflow: auto;
-				margin-bottom: 5px;
-			}
-			#news_out{
-				border: 2px solid #777;
-				height: 350px;
-				overflow: auto;
-			}
-			.news_row{
-				display: inline-grid;
-				width: 230px;
-			}
-			.news_image img{
-				width: 100%;
-				height: 150px;
-			}
-			.news_title{
-				width: 100%;
-			}
-			.news_description{
-				width: 100%;
-			}
+		#news_out{
+			border: 2px solid #777;
+			height: 350px;
+			overflow: auto;
+			padding-left: 12px;
+		}
+		.news_row{
+			display: inline-grid;
+			width: 230px;
+		}
+		.news_image img{
+			width: 100%;
+			height: 150px;
+		}
+		.news_title{
+			width: 100%;
+		}
+		.news_description{
+			width: 100%;
+		}

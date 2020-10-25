@@ -25,6 +25,10 @@ module.exports = ((sequelize, DataTypes) => (
             type: DataTypes.STRING(40),
             allowNull: true,
         },
+        permission: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false, 
+        },
     }, {
         timestamps: true,
         paranoid: true,
