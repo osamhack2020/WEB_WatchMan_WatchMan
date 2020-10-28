@@ -30,6 +30,13 @@ router.get('/join', (req, res) => {
     });
 });
 
+router.get('/info', (req, res) => {
+    res.render('group_info', {
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
+});
+
 router.get('/manage', (req, res) => {
     res.render('group_manage', {
         user: req.user,

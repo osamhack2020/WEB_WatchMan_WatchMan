@@ -1,22 +1,26 @@
 const express = require('express');
 const router = express.Router();
+require('dotenv').config();
 
 router.get('/', async (req, res) => {
     const NewsAPI = require('newsapi');
-    const newsapi = new NewsAPI('98fbe85e58d84aa3afd2fb1b56ec4ccb');
+    const newsapi = new NewsAPI(process.env.API_KEY);
     var apiGroup = [];
+    var b = new Date();
+    var c = new Date();
+    c.setDate(c.getDate() - 7);
     var a = await newsapi.v2.everything({
         q: '감염',
-        from: '2020-10-10',
-        to: '2020-10-21',
+        from: c,
+        to: b,
         language: 'ko',
         sortBy: 'relevancy'
     });
     apiGroup.push(a);
     a = await newsapi.v2.everything({
-        q: 'trump',
-        from: '2020-10-10',
-        to: '2020-10-21',
+        q: 'disease',
+        from: c,
+        to: b,
         language: 'en',
         sortBy: 'relevancy'
     });

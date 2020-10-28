@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Watch Man</title>
+	<link rel="stylesheet" href="/css/wtm.css">
+	<!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<aside>
+        <%- include('sidebar') %>
+	</aside>
+	<section id="right">
+		<header>
+            <%- include('header') %>
+		</header>
+		<div id="header_space_cover"></div>
+		<article id="group_manager" class="contents">
+		<div class="flex_wrap1">
+			<section class="manager_info">
+				<p class="title">그룹 정보 <span>(Group info)</span></p>
+				<div>
+				<p><b>그룹명 : </b> 방공체계대대</p>
+				<p><b>초대코드 : </b> 방공체계대대#3164</p>
+				<p><b>그룹인원 : </b> 60명</p>
+				</div>
+			</section>
+			<section class="manager_my_status">
+				<p class="title">내 상태 <span>(My status)</span> <span class="join_date">그룹 참가일('20.10.17)</span></p>
+				<div class="status_under">
+					<div class="h_line"></div><div class="w_line"></div>
+					<div class="status_under_ele">일일 자가진단 시행 현황(0/2)</div>
+					<div class="status_under_ele">3일간 이상유무 시행 현황(0/1)</div>
+					<div class="status_under_ele">일일 체온보고 시행 현황(0/1)</div>
+					<div class="bar status_under_ele">
+						<div class="bar_design">
+							<div class="ing"></div>
+						</div>
+						<span>전체보고 이행률(63%)</span>
+					</div>
+				</div>
+			</section>
+			<section class="manager_diagnose">
+				<p class="title">진단 바로가기 <span>(Diagnose)</span></p>
+				<div class="diagnose_buttons">
+					<div class="m_d_btn">자가진단</div>
+					<div class="m_d_btn">이상유무</div>
+					<div class="m_d_btn">체온체크</div>
+				</div>
+			</section>
+		</div>
+		<div class="flex_wrap2">
+			<div class="flex_wrap2_in">
+			<section class="manager_setting">
+				<p class="title">그룹 설정 <span>(Group setting)</span></p>
+				<div class="setting_in">
+					<div>
+						<p>자가진단 보고기능 활성화</p>
+						<span>1일 2회 자가진단 작성 필요</span>
+					</div>
+					<div>
+						<p>이상유무 보고기능 활성화</p>
+						<span>3일 1회 이상유무 작성 필요 (마감 2일전)</span>
+					</div>
+					<div>
+						<p>체온 보고기능 활성화</p>
+						<span>1일 1회 체온  작성 필요</span>
+					</div>
+				</div>
+			</section>
+			<section class="manager_admin">
+				<p class="title">관리자 페이지 <span>(Admin page)</span></p>
+				<p class="admin_text">관리자로 설정된 유저만 접속 가능</p>
+				<div class="admin_btn">관리자 페이지</div>
+			</section>
+			</div>
+			<section class="manager_member_status">
+				<div class="status_title_box">
+					<span>그룹원 관리</span>
+					<div class="status_user_search">
+						<span class="glyphicon glyphicon-search"></span>
+						<input type="text" name="filter4" placeholder="그룹원 이름">
+					</div>
+					<div class="status_options">
+						<div>
+							<span>자가진단 미실시 </span>
+							<input type="checkbox" name="filter1">
+						</div>
+						<div>
+							<span>이상유무 미실시 </span>
+							<input type="checkbox" name="filter2">
+						</div>
+						<div>
+							<span>체온보고 미실시 </span>
+							<input type="checkbox" name="filter3">
+						</div>
+					</div>
+				</div>
+				<table id="member_table" class="table table-striped">
+					<thead>
+						<th>이름</th>
+						<th>전화번호</th>
+						<th>자가진단 (1일 2회)</th>
+						<th>이상유무 (3일 1회)</th>
+						<th>체온보고 (1일 1회)</th>
+						<th>마지막 로그인</th>
+						<th class="admin_th">보고 요청</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>이상윤</td>
+							<td>010-5405-0554</td>
+							<td>이상없음, 확인필요 | (2/2)</td>
+							<td>이상없음, 확인필요 | (1/1)</td>
+							<td>36.3 | (1/1)</td>
+							<td>1일 전</td>
+							<td>
+								<div class="requestBtn">
+									보고 요청
+								</div>
+							<td>
+						</tr>
+						<tr>
+							<td>이상윤</td>
+							<td>010-5405-0554</td>
+							<td>이상없음, 확인필요 | (2/2)</td>
+							<td>이상없음, 확인필요 | (1/1)</td>
+							<td>36.3 | (1/1)</td>
+							<td>1시간 전</td>
+							<td>
+								<div class="requestBtn">
+									보고 요청
+								</div>
+							<td>
+						</tr>
+						<tr>
+							<td>이상윤</td>
+							<td>010-5405-0554</td>
+							<td>이상없음, 확인필요 | (2/2)</td>
+							<td>이상없음, 확인필요 | (1/1)</td>
+							<td>36.3 | (1/1)</td>
+							<td>7일 전</td>
+							<td>
+								<div class="requestBtn">
+									보고 요청
+								</div>
+							<td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</section>
+		</div>	
+		</article>
+	</section>
+</body>
+</html>
