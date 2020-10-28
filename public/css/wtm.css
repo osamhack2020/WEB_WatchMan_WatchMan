@@ -928,3 +928,144 @@ header .profile > div:last-child{
 	.news_description{
 		width: 100%;
 	}
+
+
+
+/* 참여 및 승인대기 그룹  */
+#join_permit{
+	width:100%;
+	position: relative;
+}
+#jp_frame{
+	position: relative;
+	max-width:1500px;
+	width:100%;
+	height: 800px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+	box-shadow: 2px 5px 10px 8px rgba(0,0,0,.2);
+	border-radius: 10px;
+	margin-top:10px;
+}
+#jp_header{
+	width:100%;
+	height:8%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background: #313a46;
+	color:white;
+	padding:10px 25px;
+	font-size: 28px;
+	font-weight: bold;
+}
+#jp_content{
+	display: block;
+	width:100%;
+	height:92%;
+	position: relative;
+}
+#jp_content .jp_inner{
+	display: inline-block;
+	width:50%;
+	height: 100%;
+	float:left;
+	padding:10px 20px;
+}
+#jp_content .jp_left{
+	border-right:2px dashed rgba(49,58,70,.8);
+}
+#jp_content .jp_right{
+	border-left:2px dashed rgba(49,58,70,.8);	
+}
+#jp_content .jp_inner .jp_inner_title{
+	font-size:24pt;
+	font-weight: bold;
+}
+#jp_content .jp_inner p{
+	color:#4d4d4d;
+	font-weight: bold;
+	margin-left:5px;
+	margin-top:5px;
+}
+#jp_content .jp_inner .jp_table_wrapper{
+	max-height:600px;
+	overflow-y:scroll;
+}
+ #jp_content .jp_inner .jp_table_wrapper::-webkit-scrollbar {
+		width: 4px;
+		background: none;
+	}
+ #jp_content .jp_inner .jp_table_wrapper::-webkit-scrollbar-thumb {
+	    background: gray;
+	    border-radius:7px;
+	}
+ #jp_content .jp_inner .jp_table_wrapper::-webkit-scrollbar-track {
+	    background: none;
+	}
+
+.jp_inner .jp_status{
+	text-align: center;
+}
+.jp_status > div{
+	width:15px;
+	height:15px;
+	display: inline-block;
+	border-radius:100%;
+}
+.jp_status_led{
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.jp_status_led > div{
+	width:15px;
+	height:15px;
+	display: inline-block;
+	border-radius:100%;	
+	margin-left: 10px;
+	margin-right: 1px;
+}
+.jp_status_led > .green{
+	background: #8EFF69;
+}
+.jp_status_led > .red{
+	background: #FF6F6E;
+}
+.jp_status_led > .gray{
+	background: gray;
+}
+.jp_status_led > span{
+	line-height: 15px;
+	vertical-align: top;
+}
+.jp_status .red{
+	background:#FF6F6E;
+}
+.jp_status .green{
+	background:#8EFF69;
+}
+.jp_status .gray{
+	background:gray;
+}
+.jp_btn{
+	text-align: center;
+	padding-top:5px !important;
+}
+.jp_btn >div{
+	display: inline-block;
+	padding:3px 10px;
+	border-radius: 5px; 
+	border:2px solid #9e9e9e;
+	cursor: pointer;
+	font-weight: bold;
+	color: #343434;
+	transition: all 0.3s;
+}
+.jp_btn >div:hover{
+	background: #9e9e9e;
+	color:white;
+}
+.jp_left_table tbody tr{
+	cursor: pointer;
+}

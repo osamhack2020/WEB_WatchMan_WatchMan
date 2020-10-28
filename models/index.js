@@ -14,6 +14,7 @@ db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize, Sequelize);
 db.Group = require('./group')(sequelize, Sequelize);
+db.Permit = require('./permit')(sequelize, Sequelize);
 bcrypt.hash(process.env.ADMIN, 12).then((b)=> {
   const pw = b;
   db.User.findOrCreate({

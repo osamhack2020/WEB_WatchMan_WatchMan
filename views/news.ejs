@@ -19,7 +19,7 @@
                     <% for(var i=0; i<4; i++){ %>
                         <div class="news_row">
                             <div class="news_image">
-                                <img src = <%= article[i].urlToImage %>>
+                                <img src = <%- article[i].urlToImage %> onclick="window.open('<%- article[i].url %>');"/>  
                             </div>
                             <div class="news_title">
                                 <%= article[i].title %>
@@ -34,7 +34,7 @@
                     <% for(var i=0; i<4; i++){ %>
                         <div class="news_row">
                             <div class="news_image">
-                                <img src = <%= articl[i].urlToImage %>>
+                                <img src = <%- articl[i].urlToImage %> onclick="window.open('<%- articl[i].url %>');"/>
                             </div>
                             <div class="news_title">
                                 <%= articl[i].title %>

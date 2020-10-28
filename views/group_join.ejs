@@ -42,54 +42,6 @@
 						<div class="search_info">
 							<%#
 							<div class="search_info_ele">
-								<div class="permit_info_permit_true"></div>
-								<span class="search_info_title">
-									방공체계대대#3164
-								</span>
-								<span class="search_info_others">
-									[그룹장 : 이상윤] [참가인원 : 60명]
-								</span>
-								<div class="group_join_btn">
-									참가신청
-								</div>
-							</div>
-							<div class="search_info_ele">
-								<div class="permit_info_permit_false"></div>
-								<span class="search_info_title">
-									방공체계대대#31
-								</span>
-								<span class="search_info_others">
-									[그룹장 : 이상윤] [참가인원 : 8명]
-								</span>
-								<div class="group_join_btn">
-									참가신청
-								</div>
-							</div>
-							<div class="search_info_ele">
-								<div class="permit_info_permit_false"></div>
-								<span class="search_info_title">
-									방공체계대대#31
-								</span>
-								<span class="search_info_others">
-									[그룹장 : 이상윤] [참가인원 : 8명]
-								</span>
-								<div class="group_join_btn">
-									참가신청
-								</div>
-							</div>
-							<div class="search_info_ele">
-								<div class="permit_info_permit_false"></div>
-								<span class="search_info_title">
-									방공체계대대#31
-								</span>
-								<span class="search_info_others">
-									[그룹장 : 이상윤] [참가인원 : 8명]
-								</span>
-								<div class="group_join_btn">
-									참가신청
-								</div>
-							</div>
-							<div class="search_info_ele">
 								<div class="permit_info_permit_false"></div>
 								<span class="search_info_title">
 									방공체계대대#31
@@ -112,14 +64,15 @@
 </html>
 <script>
 	var ft = function(a, b, c, d, e, f){
+		/* b = 그룹명, c = 그룹코드, d = 그룹장이름, e = 그룹 참가인원 f =  허가 여부 */
 		if(f == true){
 			a.innerHTML = "<div class='permit_info_permit_true'></div>";
 		}else{
 			a.innerHTML = "<div class='permit_info_permit_false'></div>";
 		}
-		a.innerHTML += "<span class='search_info_title'>"+b+"#"+c+"</div>";
-		a.innerHTML += "<span class='search_info_others'>[그룹장 : "+d+"] [참가인원 : "+e+"명]</div>";
-		a.innerHTML += "<div class='group_join_btn'>참가신청</div>";
+		a.innerHTML += `<span class='search_info_title'>${b}#${c}</span>`;
+		a.innerHTML += `<span class='search_info_others'>[그룹장 : ${d}] [참가인원 : ${e}명]</span>`;
+		a.innerHTML += `<div class='group_join_btn' onclick="location.href='/group/join/permit/${c}/${d}/${f}/${e}'">참가신청</div>`;
 	}
 	var sc = document.querySelector(".group_search_btn");
 	sc.addEventListener("click", function(){
@@ -133,7 +86,7 @@
 					var a = document.querySelector(".search_info");
 					a.innerHTML = '';
 					var div = document.createElement("div");
-					div.className = "search_info_ele";
+					div.className = "search_info_ele";;
 					if(gr.permit=="on"){
 						ft(div, gr.name, gr.id, gr.users[0].name, gr.member, true);
 					}else{
