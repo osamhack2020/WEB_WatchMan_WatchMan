@@ -194,7 +194,6 @@ router.get('/search/:gn/:gc', async(req, res, next) => {
                 attributes: ['id', 'name', 'permit', 'member'],
                 include: [{
                     model: User,
-                    where: { id: req.user.id },
                     attributes: ['name'],
                 }],
             });
