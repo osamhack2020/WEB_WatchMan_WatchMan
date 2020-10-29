@@ -34,6 +34,22 @@ router.get('/join', (req, res) => {
     });
 });
 
+/* 참가중인 그룹 들어갔을때 나오는 페이지 */
+router.get('/join/info/:grcode', (req, res, next) => {
+    res.render('group_info', {
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
+});
+
+/* 자기가 그룹장인 그룹 클릭했을 때*/
+router.get('/join/admin/:grcode', (req, res) => {
+    res.render('group_admin', {
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
+});
+
 
 /* 그룹 참가 데이터 DB 넘기기 */
 router.get('/join/permit/:groupid/:leader/:permit/:num', async(req, res, next) => {

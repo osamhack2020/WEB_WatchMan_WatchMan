@@ -7,9 +7,9 @@
 	list-style: none;
 }
 /*수정한 부분*/
-a:link { color: #7e8b9c; text-decoration: none;}
-a:visited { color: #7e8b9c; text-decoration: none;}
-a:hover { color: white; text-decoration: none;}
+a:link { color: #7e8b9c !important; text-decoration: none !important;}
+a:visited { color: #7e8b9c !important; text-decoration: none !important;}
+a:hover { color: white !important; text-decoration: none !important;}
 
 .login form{
 	display: inline-block;
@@ -281,6 +281,10 @@ header .profile > div:last-child{
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	background: #313a46;
+	padding:13px 30px;
+	font-size: 1.5em;
+	font-weight: bold; 
+	color:white;
 }
 #cf_content{
 	display: block;
@@ -1205,8 +1209,143 @@ header .profile > div:last-child{
 #page_admin .keword_title span, #page_admin .live_title span{
 	font-size:0.75em;
 	color:#949393;
-
 }
 
 .live_title .onoffswitch{
 }
+
+
+
+
+/* 그룹 관리자 페이지 */
+#group_admin .group_admin_title{
+	font-size:1.5em;
+	font-weight: bold;
+	color:#313a46;
+}
+#group_admin .ga_members{
+	width:100%;
+	min-height:500px;
+	padding:10px 20px;
+	padding-bottom: 30px;
+	background: #fff;
+	box-shadow:0px 2px 10px 8px rgba(0,0,0,.1);
+}
+.ga_members table tbody tr{
+	cursor: pointer;
+}
+#group_admin .members_title, #group_admin .permit_title{
+	font-size: 1.3em;
+	font-weight: bold;
+	color:#3a3a3a;
+}
+#group_admin .members_title span, #group_admin .permit_title span{
+	font-size:0.75em;
+	color:#666;
+
+}
+
+.ga_led{
+	width:15px;
+	height:15px;
+	display: inline-block;
+	border-radius:100%;	
+}
+.ga_led.green{
+	background: #8EFF69;
+}
+.ga_led.red{
+	background: #FF6F6E;
+}
+.ga_led.gray{
+	background: gray;
+}
+.thead-dark{
+	background:#E9ECEF;
+}
+.ga_md:first-child{
+	margin-top:10px;
+}
+.ga_md:not(:last-child){
+	margin-bottom:20px;
+}
+.ga_md .ga_md_title{
+	font-size: 1.3em;
+	font-weight: bold;
+	color:#3a3a3a;
+	margin-bottom: 10px;
+}
+.ga_md .ga_md_title span{
+	font-size:0.75em;
+	color:#646464;
+}
+.ga_md_self tbody td, .ga_md_self tbody th{
+	vertical-align: baseline !important;
+}
+#view_modal .table-bordered,#view_modal .table-bordered th {
+	text-align: center;
+}
+#self_modal .red{
+	color:red;
+}
+.ga_members .members_text{
+	margin-top: 8px;
+}
+.ga_members .members_text li{
+	line-height: 1.6em;
+	color:#555;
+}
+#members_list_wrap{
+	max-height: 500px;
+	overflow-y:scroll;
+}
+ #members_list_wrap::-webkit-scrollbar {
+		width: 4px;
+		background: none;
+	}
+ #members_list_wrap::-webkit-scrollbar-thumb {
+	    background: gray;
+	    border-radius:7px;
+	}
+ #members_list_wrap::-webkit-scrollbar-track {
+	    background: none;
+	}
+
+#group_admin .ga_permit{
+	margin-top: 50px;
+	width:100%;
+	min-height:500px;
+	padding:10px 20px;
+	padding-bottom: 30px;
+	background: #fff;
+	box-shadow:0px 2px 10px 8px rgba(0,0,0,.1);
+}
+.ga_md_temp_led > div{
+	width:15px;
+	height:15px;
+	display: inline-block;
+	border-radius:100%;	
+}
+.ga_md_temp_led > .green{
+	background: #8EFF69;
+}
+.ga_md_temp_led > .red{
+	background: #FF6F6E;
+}
+
+#permit_list_wrap{
+	padding-bottom: 30px;
+	max-height: 500px;
+	overflow-y:scroll;
+}
+ #permit_list_wrap::-webkit-scrollbar {
+		width: 4px;
+		background: none;
+	}
+ #permit_list_wrap::-webkit-scrollbar-thumb {
+	    background: gray;
+	    border-radius:7px;
+	}
+ #permit_list_wrap::-webkit-scrollbar-track {
+	    background: none;
+	}

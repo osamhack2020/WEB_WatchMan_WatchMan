@@ -134,12 +134,12 @@
 			}
 		}
 		function qw(q,w,e,r){/* 그룹장이 아닌경우 */
-			var a = `<tr><th scope="row">${r}</th><td>${q}</td><td>${q}#${w}</td><td>(${e}/60)</td><td class="jp_status"><div class="gray"></div></td></tr>`;
+			var a = `<tr onclick="location.href='/group/join/info/${w}'"><th scope="row">${r}</th><td>${q}</td><td>${q}#${w}</td><td>(${e}/60)</td><td class="jp_status"><div class="gray"></div></td></tr>`;
 			var b = document.querySelectorAll(".jp_left_table")[0];
 			b.children[1].innerHTML += a;
 		}
 		function er(q,w,e,r,s){/* 그룹장인 경운 */
-			var a = `<tr><th scope="row">${s}</th><td>${q}</td><td>${q}#${w}</td><td>${r}</td><td>(${e}/60)</td></tr>`;
+			var a = `<tr onclick="location.href='/group/join/admin/${w}'"><th scope="row">${s}</th><td>${q}</td><td>${q}#${w}</td><td>${r}</td><td>(${e}/60)</td></tr>`;
 			var b = document.querySelectorAll(".jp_left_table")[1];
 			b.children[1].innerHTML += a;
 		}
