@@ -1,0 +1,557 @@
+<%- include('head') %>
+    <div id="header_space_cover"></div>
+    <article id="group_admin"  class="contents">
+        <p class="group_admin_title">
+            Group Admin Page (그룹 관리자 페이지)
+        </p>
+			<div class="ga_members">
+				<div class="members_title">그룹 멤버 관리 <span>(행을 클릭하여 상세 보고 결과 조회 가능)</span></div>
+				<ul class="members_text">
+					<li>- 보고 실시현황은 자가진단, 체온, 이상유무 보고 중 하나 이상 항목을 실시하지 않은경우 적색 표시됩니다</li>
+					<li>- 현재상태는 자가진단, 체온, 이상유무 보고 중 하나 이상 항목에서 이상 발견 시 적색 표시 됩니다</li>
+					<li>- 모든 보고항목이 비활성화 된 경우 보고 실시현황과 현재상태는 회색 표시됩니다</li>
+				</ul>
+				<div id="members_list_wrap">
+				<table class="table table-striped table-hover" id="members_list">
+				<thead>
+				    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">이름</th>
+                        <th scope="col">전화번호</th>
+                        <th scope="col">이메일</th>
+                        <th scope="col">마지막 로그인</th>
+                        <th scope="col" style="text-align: center;">보고 실시현황</th>
+                        <th scope="col" style="text-align: center;">현재상태</th>
+				    </tr>
+				</thead>
+				  <tbody>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				    <tr data-toggle="modal" data-target=".bd-example-modal-lg">
+				      <th scope="row">1</th>
+				      <td>이상윤</td>
+				      <td>010-5405-0554</td>
+				      <td>kara090813@gmail.com</td>
+				      <td>2020.10.29 11:23:40</td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				      <td style="text-align: center;">
+				      	<div class="ga_led green">
+				      </td>
+				    </tr>
+				  </tbody>
+				</table>
+				</div>
+			</div>
+			<div class="ga_permit">
+			<!-- 참가 수락처리 폼 -->
+			<form method="post" action="">
+				<div class="permit_title">
+					그룹 참가 요청 <span>(그룹에 참가 신청한 유저 목록)</span>
+				</div>
+				<div class="permit_btns" style="text-align: right">
+					<!-- submit name주고 value로 수락인지 거부인지 구분 -->
+					<button class="btn btn-success" name="sub" value="true">참가 수락</button>
+					<button class="btn btn-danger" name="sub" value="false">참가 거부</button>
+				</div>
+				<div id="permit_list_wrap">
+					<table id="permit_list" class="table table-striped table-hover">
+						<thead>
+				    		<tr>
+				      			<th scope="col" >
+				      				<input type="checkbox" id="all_chk" onchange="allChk()">
+				      			</th>
+				      			<th scope="col">이름</th>
+				      			<th scope="col">전화번호</th>
+				   		  		<th scope="col">이메일</th>
+				    	  		<th scope="col">요청 일시</th>
+				    		</tr>
+				  		</thead>
+				  		<tbody>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				    		<tr>
+				     			<th scope="row">
+				     				<!--퍼밋 리스트는 배열로 넘어가고 참가 요청 db idx를 주어 백에서 처리-->
+				     				<input type="checkbox" name="permit_list[]" value="idx">
+				     			</th>
+				      			<td>이상윤</td>
+				      			<td>010-5405-0554</td>
+				      			<td>kara090813@gmail.com</td>
+				      			<td>2020.10.29 11:23:40</td>
+				    		</tr>
+				  		</tbody>
+					</table>
+				</div>
+			</div>
+<!-- Large modal -->
+<div class="modal fade bd-example-modal-lg" id="view_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    	<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">이상윤(kara090813)[010-5405-0554] 상세정보</h4>
+        </div>
+        <div class="modal-body">
+          <div class="ga_md ga_md_self">
+          	<div class="ga_md_title">전염병 자가진단 <span>(1일 1회 보고하도록 설정됨, 시작 기준날짜 : 2020.10.29)</span></div>
+			<table class="table table-bordered">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">증상 의심 문항 갯수</th>
+			      <th scope="col">제출일시</th>
+			      <th scope="col">자가진단표 확인</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>3개 (1, 3, 6)</td>
+			      <td>2020.10.29 13:20:20</td>
+			      <td>
+			      	<div class="btn btn-default" data-toggle="modal" data-target="#self_modal">진단표 확인</div>
+			      </td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>3개 (1, 3, 6)</td>
+			      <td>2020.10.29 13:20:20</td>
+			      <td>
+			      	<div class="btn btn-default" data-toggle="modal" data-target="#self_modal">진단표 확인</div>
+			      </td>
+			    </tr>
+			  </tbody>
+			</table>
+          </div>
+          <div class="ga_md ga_md_temp">
+          	<div class="ga_md_title">체온보고 <span>(보고 설정되지 않음)</span></div>
+          	<table class="table table-bordered">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">체온</th>
+			      <th scope="col">정상 체온 여부</th>
+			      <th scope="col">보고일시</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<tr>
+			      <th scope="row">1</th>
+			      <td>36.3</td>
+			      <td class="ga_md_temp_led">
+			      	<div class="green"></div>
+			      </td>
+			      <td>2020.10.29 13:20:20</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>38</td>
+			      <td class="ga_md_temp_led">
+			      	<div class="red"></div>
+			      </td>
+			      <td>2020.10.29 13:20:20</td>
+			    </tr>
+			  </tbody>
+			</table>
+          </div>
+          <div class="ga_md ga_md_any">
+          	<div class="ga_md_title">이상유무 보고 <span>(1일 2회 보고하도록 설정됨, 시작 기준날짜 : 2020.10.27)</span></div>
+          	<table class="table table-bordered">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">보고내용</th>
+			      <th scope="col">보고일시</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>이상없음</td>
+			      <td>2020.10.29 14:29:30</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>두통 있음</td>
+			      <td>2020.10.29 14:3-:30</td>
+			    </tr>
+			  </tbody>
+			</table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="self_modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">이상윤 진단표 (2020.10.24 13:42:33)</h4>
+        </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered">
+                    <tr class="red">
+                        <td>Q1. 현재 ~한 증상을 앓고있나요?</td><td>A1. 네</td>
+                    </tr>
+                    <tr>
+                        <td>Q1. 현재 ~한 증상을 앓고있나요?</td><td>A1. 네</td>
+                    </tr>
+                    <tr>
+                        <td>Q1. 현재 ~한 증상을 앓고있나요?</td><td>A1. 네</td>
+                    </tr>
+                </table>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		</div>
+		</article>
+	</section>
+</body>
+</html>
+
+
+<script>
+	function allChk(){
+		let a_chk_btn = document.querySelector("#all_chk");
+		let all_inp = document.querySelectorAll("input[name='permit_list[]']");
+		let chk = '';
+		if(a_chk_btn.checked){
+			chk = true;
+		}
+		else{
+			chk = false;
+		}
+		for(ele of all_inp){
+			ele.checked = chk;
+		}
+	}
+</script>

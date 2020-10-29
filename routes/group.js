@@ -45,6 +45,32 @@ router.get('/join/info/:grcode', (req, res, next) => {
 /* 자기가 그룹장인 그룹 클릭했을 때*/
 router.get('/join/admin/:grcode', (req, res) => {
     res.render('group_admin', {
+        grcode: req.params.grcode,
+        user: req.user,
+        loginError: req.flash('loginError'),
+    });
+});
+
+/* 그룹장인 그룹 설정 하는 페이지 */
+router.get('/admin/setting/:grcode', async (req, res, next) => {
+    try{
+        const group = await Group.findOne({
+            where: { id: req.params.grcode },
+        });
+        res.render('group_setting', {
+            user: req.user,
+            loginError: req.flash('loginError'),
+            group,
+        });
+    }catch(error){
+        console.error(error);
+        next(error);
+    }
+});
+
+/* 그룹장인 그룹 멤버 관리 페이지 */
+router.get('/admin/member', (req, res) => {
+    res.render('group_member', {
         user: req.user,
         loginError: req.flash('loginError'),
     });
