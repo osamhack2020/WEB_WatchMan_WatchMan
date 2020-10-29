@@ -34,6 +34,7 @@ router.get('/join', (req, res) => {
     });
 });
 
+
 /* 그룹 참가 데이터 DB 넘기기 */
 router.get('/join/permit/:groupid/:leader/:permit/:num', async(req, res, next) => {
     try{
@@ -45,12 +46,16 @@ router.get('/join/permit/:groupid/:leader/:permit/:num', async(req, res, next) =
                     where: { grid: req.params.groupid, usid: req.user.id },
                 });
                 if(bee != null){
-                    res.send('이미 가입되어 있습니다');
+                    res.send('승인중입니다');
                 }else{
                     await Permit.create({
                         grid: req.params.groupid,
                         usid: req.user.id,
                     });
+                    var very = await Group.findOne({
+                        where: { id: req.params.groupid },
+                    });
+                    await very.addPermit(req.params.groupid);
                     res.send('ok');
                 }
             }else{
@@ -77,20 +82,18 @@ router.get('/join/permit/:groupid/:leader/:permit/:num', async(req, res, next) =
         next(error);
     }
 });
-
-router.get('/info', (req, res) => {
-    res.render('group_info', {
-        user: req.user,
-        loginError: req.flash('loginError'),
-    });
-});
 /* 내 그룹 관리 눌렀을 때 */
 router.get('/manage', async (req, res, next) => {
     try{
         const user = await User.findOne({ where: {id: req.user.id }});
         let abc = [];
-        let doolli = await user.getGroups({ where: {leader: {[Op.not]: req.user.id } }});
-        let dounu = await Permit.findAll({ where: {usid: req.user.id }});
+        let doolli = await user.getGroups();
+        let dounu = await Permit.findAll({ 
+            where: {usid: req.user.id }, 
+            include: [{
+                model: Group,
+            }] 
+        });
         abc.push(doolli);
         abc.push(dounu);
         res.render('group_manage', {

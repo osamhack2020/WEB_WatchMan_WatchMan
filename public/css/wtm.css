@@ -7,9 +7,9 @@
 	list-style: none;
 }
 /*수정한 부분*/
-a:link { color: #7e8b9c !important; text-decoration: none !important;}
-a:visited { color: #7e8b9c !important; text-decoration: none !important;}
-a:hover { color: white !important; text-decoration: none !important;}
+a:link { color: #7e8b9c; text-decoration: none;}
+a:visited { color: #7e8b9c; text-decoration: none;}
+a:hover { color: white; text-decoration: none;}
 
 .login form{
 	display: inline-block;
@@ -51,8 +51,7 @@ a:hover { color: white !important; text-decoration: none !important;}
     font-size: 0.9em;
     cursor: pointer;
 }
-/* ---------------*/
-html{background:#f3f3f3;}
+/* ---------------*/ 
 aside{
 	max-width:230px;
 	width:100%;
@@ -67,7 +66,7 @@ aside{
 	margin-left:230px;
 	position: relative;
 }
-#header_space_cover{display: block;width:100%;height:90px;}
+#header_space_cover{display: block;width:100%;height:80px;}
 
 /*aside*/
 #logo{width:100%;text-align: center;padding-top:15px;padding-bottom:25px;cursor: pointer;}
@@ -166,7 +165,7 @@ header .profile > div:last-child{
 
 
 /*contents */
-.contents{padding:20px 30px;background: #f3f3f3}
+.contents{padding:20px 30px;}
 
 
 /*회원가입*/
@@ -338,7 +337,6 @@ header .profile > div:last-child{
 	position: relative;
 	max-width:835px;
 	width:100%;
-	height:730px;
 	left: 50%;
 	transform: translateX(-50%);
 	background: white;
@@ -367,6 +365,8 @@ header .profile > div:last-child{
 	.create_ele_block{
 		font-size: 17px;
 		font-weight: bold;
+	}
+	.create_ele_block:not(:last-child){
 		margin-bottom:30px;
 	}
 	.create_ele_block:nth-child(2){
@@ -848,7 +848,7 @@ header .profile > div:last-child{
 	border: 2px solid #777;
 	padding: 10px 15px 10px 15px;
 	height: 400px;
-	overflow: auto;
+	overflow-y: scroll;
 }
 .search_info::-webkit-scrollbar{
 	width: 6px;
@@ -970,13 +970,15 @@ header .profile > div:last-child{
 	width:50%;
 	height: 100%;
 	float:left;
+}
+.jp_inner > div{
 	padding:10px 20px;
 }
 #jp_content .jp_left{
-	border-right:2px dashed rgba(49,58,70,.8);
+	border-right:1.5px solid rgba(49,58,70,.8);
 }
 #jp_content .jp_right{
-	border-left:2px dashed rgba(49,58,70,.8);	
+	border-left:1.5px solid rgba(49,58,70,.8);	
 }
 #jp_content .jp_inner .jp_inner_title{
 	font-size:24pt;
@@ -987,6 +989,9 @@ header .profile > div:last-child{
 	font-weight: bold;
 	margin-left:5px;
 	margin-top:5px;
+}
+#jp_content .jp_inner.jp_left .jp_table_wrapper{
+	max-height: 210px;
 }
 #jp_content .jp_inner .jp_table_wrapper{
 	max-height:600px;
@@ -1068,4 +1073,140 @@ header .profile > div:last-child{
 }
 .jp_left_table tbody tr{
 	cursor: pointer;
+}
+.jp_left_top{
+	height: 49%;
+	border-bottom: 3px dashed rgba(90,97,107,0.8);
+}
+
+
+
+/*토글스위치*/
+.onoffswitch {
+	display: inline-block;
+    position: relative; width: 77px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 22px; padding: 0; line-height: 22px;
+    font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 11px;
+    background-color: #14AD03; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 11px;
+    background-color: #FF6F6E; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 30px;height:30px; margin: -2.5px;
+    background: #FFFFFF;
+    position: absolute; bottom: 0;top:0;
+    right: 51px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+
+
+/* 그룹 셋팅 */
+
+.setting_remove{
+	margin-top:20px;
+	width:100%;
+	height:80px;
+	border:2px solid #FF2221;
+	position: relative;
+	padding:0px 25px;
+	padding-top:25px;
+}
+.setting_remove .rm_btn{
+	display: inline-block;
+	padding: 4px 10px;
+    border: 2px solid #777777;
+    border-radius: 5px;
+    font-size:1em;
+    box-shadow: 2px 4px 3px 1px rgba(0,0,0,.15);
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    color:#444;
+    transition: all 0.3s;
+}
+.setting_remove .rm_btn:hover{
+	background: #777;
+	color:#fff;
+}
+.setting_remove span{
+	color:#444;
+	font-weight: bold;
+	height:36px;
+	line-height: 30px;
+	vertical-align:middle;
+	display: inline-block;
+	margin-left:10px;
+	font-size: 0.9em;
+}
+.setting_remove_title{
+	position: absolute;
+	width:130px;
+	height:30px;
+	text-align: center;
+	background: #fff;
+	font-weight: bold;
+	top:-10px;
+	left:25px;
+}
+
+
+
+/* 사이트 어드민 */
+#page_admin .page_admin_title{
+	font-size:1.5em;
+	font-weight: bold;
+	color:#313a46;
+}
+#admin_live{
+	width:100%;
+	min-height:500px;
+	padding:10px 20px;
+	background: #fff;
+	box-shadow:0px 2px 10px 8px rgba(0,0,0,.1);
+}
+#page_admin .keword_title, #page_admin .live_title{
+	font-size: 1.3em;
+	font-weight: bold;
+	color:#3a3a3a;
+}
+#page_admin .keword_title span, #page_admin .live_title span{
+	font-size:0.75em;
+	color:#949393;
+
+}
+
+.live_title .onoffswitch{
 }

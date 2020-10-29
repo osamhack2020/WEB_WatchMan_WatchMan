@@ -30,5 +30,7 @@ bcrypt.hash(process.env.ADMIN, 12).then((b)=> {
 });
 db.User.belongsToMany(db.Group, { through: 'temp' });
 db.Group.belongsToMany(db.User, { through: 'temp' });
+db.Group.hasMany(db.Permit);
+db.Permit.belongsTo(db.Group);
 
 module.exports = db;
