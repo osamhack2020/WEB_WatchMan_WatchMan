@@ -52,11 +52,11 @@ router.get('/join/admin/:grcode', (req, res) => {
 });
 
 /* 그룹 승인 허가 */
-router.post('/join/permit', async (req, res, next) => {
+router.post('/join/permit/:grcode', async (req, res, next) => {
     try{
         const { sub, permit_list } = req.body;
         for(var i=0; i<permit_list.length; i++){
-            await Permit.destroy({ where: { usid: permit_list[i] }});
+            await Permit.destroy({ where: { usid: permit_list[i], grid: req.params.grcode }});
         }
         res.send('ok');
     }catch(error){
@@ -112,6 +112,7 @@ router.get('/admin/member/:grcode', async (req, res, next) => {
             loginError: req.flash('loginError'),
             group,
             permitusers,
+            grcode: req.params.grcode,
         });
     }catch(error){
         console.error(error);
