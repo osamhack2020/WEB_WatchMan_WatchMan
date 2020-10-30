@@ -51,6 +51,20 @@ router.get('/join/admin/:grcode', (req, res) => {
     });
 });
 
+/* 그룹 승인 허가 */
+router.post('/join/permit', async (req, res, next) => {
+    try{
+        const { sub, permit_list } = req.body;
+        for(var i=0; i<permit_list.length; i++){
+            await Permit.destroy({ where: { usid: permit_list[i] }});
+        }
+        res.send('ok');
+    }catch(error){
+        console.error(error);
+        next(error);
+    }
+});
+
 /* 그룹장인 그룹 설정 하는 페이지 */
 router.get('/admin/setting/:grcode', async (req, res, next) => {
     try{
@@ -69,11 +83,40 @@ router.get('/admin/setting/:grcode', async (req, res, next) => {
 });
 
 /* 그룹장인 그룹 멤버 관리 페이지 */
-router.get('/admin/member', (req, res) => {
-    res.render('group_member', {
-        user: req.user,
-        loginError: req.flash('loginError'),
-    });
+router.get('/admin/member/:grcode', async (req, res, next) => {
+    try{
+        const group = await Group.findOne({
+            where: { id: req.params.grcode },
+            include: [{
+                model: User,
+                where:{
+                    id: {
+                        [Op.not]: req.user.id
+                    }
+                }
+            }]
+        });
+        const permituserid = await Permit.findAll({
+            where: { grid: req.params.grcode },
+            attributes: ['usid']
+        });
+        let permitusers = [];
+        for( var i in permituserid){
+            let = temper = await User.findOne({
+                where: {id: permituserid[i].usid}
+            });
+            permitusers.push(temper);
+        }
+        res.render('group_member', {
+            user: req.user,
+            loginError: req.flash('loginError'),
+            group,
+            permitusers,
+        });
+    }catch(error){
+        console.error(error);
+        next(error);
+    }
 });
 
 
@@ -90,14 +133,14 @@ router.get('/join/permit/:groupid/:leader/:permit/:num', async(req, res, next) =
                 if(bee != null){
                     res.send('승인중입니다');
                 }else{
-                    await Permit.create({
+                    const bery = await Permit.create({
                         grid: req.params.groupid,
                         usid: req.user.id,
                     });
-                    var very = await Group.findOne({
+                    const very = await Group.findOne({
                         where: { id: req.params.groupid },
                     });
-                    await very.addPermit(req.params.groupid);
+                    await very.addPermit(bery);
                     res.send('ok');
                 }
             }else{
