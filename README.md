@@ -7,8 +7,7 @@
 
 
 ## 기능 설계
- -  발사믹, 카카오 오븐 등 본인이 편한 목업 프레임워크를 이용하여 제작 후 링크 
- - 수기로 작성시 찍어서 올려주세요
+
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 * ECMAScript 6 지원 브라우저 사용
@@ -16,14 +15,12 @@
 
 ## 기술 스택 (Technique Used) (예시)
 ### Server(back-end)
- - nodejs - v12.19.0
- - express - v4.17.1 프레임워크 사용
+ - nodejs 
+ - express 프레임워크 사용
  - DB - MYSQL
  
 ### front-end
- -  react.js, vue.js 등 사용한 front-end 프레임워크 
- -  UI framework
- - 기타 사용한 라이브러리
+ -  Bootstrap
 
 ## 설치 안내 (Installation Process)
 
