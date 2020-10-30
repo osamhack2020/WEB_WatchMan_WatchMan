@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User, Group, Permit } = require('../models');
-const { Op } = require('sequelize');
+const { Op, Sequelize } = require('sequelize');
 
 
 /* 그룹 생성/참여 눌렀을때*/
@@ -55,8 +55,18 @@ router.get('/join/admin/:grcode', (req, res) => {
 router.post('/join/permit/:grcode', async (req, res, next) => {
     try{
         const { sub, permit_list } = req.body;
-        for(var i=0; i<permit_list.length; i++){
+        for(var i=0; i<permit_list.length; i++){/* permit 에서 삭제*/
             await Permit.destroy({ where: { usid: permit_list[i], grid: req.params.grcode }});
+            if(sub=="true"){
+                const user = await User.findOne({ where: { id: permit_list[i] }});
+                await user.addGroups(req.params.grcode);
+                await Group.update(
+                    { member: Sequelize.literal('member+1')},
+                    { where: { id: req.params.grcode },
+                });
+            }else{
+                /* 거절 했을경우 내그룹관리에서 바뀔수 있게하게 작성 */
+            } 
         }
         res.send('ok');
     }catch(error){
