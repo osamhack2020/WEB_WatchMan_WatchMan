@@ -34,7 +34,7 @@ $ npm install
 3. npm start를 입력합니다.
 ```bash
 $ npm start
-...
+```
 4. http://localhost:8000 를 입력하여 사이트에 접속합니다.
 
 
