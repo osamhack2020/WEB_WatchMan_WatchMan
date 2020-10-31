@@ -13,7 +13,7 @@
 * ECMAScript 6 지원 브라우저 사용
 * 권장: Google Chrome 버젼 77 이상
 
-## 기술 스택 (Technique Used) (예시)
+## 기술 스택 (Technique Used)
 ### Server(back-end)
  - nodejs 
  - express 프레임워크 사용
@@ -23,6 +23,19 @@
  -  Bootstrap
 
 ## 설치 안내 (Installation Process)
+1. 원격 저장소를 클론합니다.
+```bash
+$ git clone https://github.com/osamhack2020/WEB_InpenDansim_INPENDANSIM.git
+```
+2. npm install을 실행합니다.
+```bash
+$ npm install
+```
+3. npm start를 입력합니다.
+```bash
+$ npm start
+...
+4. http://localhost:8000 를 입력하여 사이트에 접속합니다.
 
 
 ## 프로젝트 사용법 (Getting Started)
